@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Şarj İstasyonları</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+      crossorigin=""
+    />
+    <style>
+      *{
+        margin: 0px;
+        padding: 0px;
+        --mor: #7f00ff;
+        --koyumor:rgb(66, 0, 132);
+        --acikmor: #b388eb;
+        --koyu: #1a002b;
+        --beyaz: #ffffff;
+        --kopkoyu: #2C003E;
+        
+      }
+      body {    
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, var(--koyu), var(--mor));
+        color: var(--beyaz);
+        height: 100vh;
+      }
+
+      #map {
+        height: 500px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+      }
+      
+      .banner{
+        width: 100%;
+        height: 80px;
+        background: linear-gradient(135deg, var(--koyu), var(--koyumor));
+        box-shadow: 3px 0px 30px #1a002b;
+        font-size: 17px;
+        line-height: 80px;
+        color: var(--acikmor);
+      }
+
+      .banner a{
+        float: right;
+        margin-right: 20px;
+        color: var(--acikmor);
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-size: 17px;
+        line-height: 80px;
+      }
+
+      .banner a:hover{
+        color: var(--beyaz)
+        transition: all 0.3s ease;
+      }
+      .Main{
+        float: left;
+        margin-top: 50px;
+        margin-left: 50px;
+      }
+    </style>
+  </head>
+
+  <body>
+      <div class="banner">
+        <a href="<%= charge_map_index_path %>" style="margin-right:40px">Ana Sayfa</a>
+        <a href="<%= charge_map_map_path %>">Haritalar</a>
+      </div>
+      <div class="Main">
+        <h1 style="float: left;">Projenin Amacı:</h1>
+        <p style="float: left; clear: both; margin-left: 20px; margin-top: 20px;">Bu proje, Ruby on Rails kullanılarak geliştirilen bir web uygulamasıdır. <br> Uygulama, OpenChargeMap API’si aracılığıyla Türkiye’deki elektrikli araç şarj istasyonlarının konum bilgilerini alır ve bunları harita üzerinde kullanıcıya sunar. <br> API istekleri HTTParty kütüphanesi ile yapılır ve bu sayede harita üzerinde istasyonlar gösterilir. Cities.json dosyasından alınan şehir verileri ile, <br>kullanıcılar şehir seçerek filtreleme yapabilir; örneğin sadece İstanbul’daki istasyonları görebiliriz. <br> Bu sayede bölgemizdeki E-şarj istasyonlarının konumlarını kolaylıkla bulabiliriz.</p>
+      </div>
+
+  </body>
+</html>
